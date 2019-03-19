@@ -38,12 +38,10 @@ public class Libretto {
 	}
 	
 	public boolean esisteVoto(Voto v) {
-		Voto trovato = this.cercaVoto(v.getCorso());
-		if(trovato == null)
+		int pos = this.voti.indexOf(v);
+		if(pos==-1)
 			return false;
-		if(trovato.getPunti()==v.getPunti())
-			return true;
 		else
-			return false;
+			return (v.getPunti() == this.voti.get(pos).getPunti());
 	}
 }
